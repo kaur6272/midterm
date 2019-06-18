@@ -8,6 +8,7 @@ import java.util.Scanner;
 /**
  *
  * @author Sivagama
+ * Arshdeep Kaur
  */
 public class AccountTester {
     
@@ -20,15 +21,24 @@ public class AccountTester {
         
         Scanner sc=new Scanner(System.in);
         double bal=sc.nextDouble();
-        
+        if(bal<=50)
+        {
+            System.out.println("Balance must be greater than $50. Account not created.");
+        }
+        else
+        {
         System.out.println("Please enter the unique user name:");
         sc.nextLine();
         String user=sc.nextLine();
         
         Account a=new Account(bal,user);
         ac[0]=a;
-             
+        
+        
+        System.out.println("Account Created");     
         System.out.println("The balance is: "+a.getBalance());  
         System.out.println("The InterestRate per month is "+a.getInterestRate());
+        System.out.println("New Balance after applying interest rate is "+ a.getNewBalance());
+        }
     }
 }

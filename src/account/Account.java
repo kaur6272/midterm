@@ -8,12 +8,14 @@ package account;
 /**
  *
  * @author Sivagama
+ * Arshdeep Kaur
  */
-public class Account {
+public class Account{
 
     
         private double balance;
         private double interestRate=0.23;
+        private double newBalance1;
         private String user;
  
      /**constructor that takes the initial balance
@@ -63,6 +65,18 @@ public class Account {
     public String getUser() {
         return user;
     }
-    
+    /**
+     * @param newBalance the newBalance to set
+     */
+    public void setNewBalance(double newBalance) {
+        //this.newBalance = newBalance;
+        newBalance1=balance+(balance*interestRate);
+      /**
+     * @return the newBalance
+     */   
+    }
+    public double getNewBalance() {
+        return newBalance1;
+    }
     
 }//class end
